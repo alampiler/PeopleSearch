@@ -1,0 +1,202 @@
+@import 'colors.scss';
+@import 'fonts.scss';
+@import "../libs/foundation-sites/scss/foundation.scss";
+
+@include foundation-everything;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+body{
+  img{
+    max-width: 100%;
+  }
+}
+
+.header{
+  border-top: 4px solid $mainRed;
+
+  .header_top_menu{
+    background: $mainBlue;
+    color: #fff;
+
+    .telephones{
+      .tel_img{
+        background: url("../img/sprite.png") no-repeat -176px -10px;
+        display: block;
+        width: 15px;
+        height: 25px;
+      }
+    }
+
+    .social_icons{
+      .social{
+        background: url(../img/sprite.png) no-repeat center;
+        width: 43px;
+        height: 43px;
+        display: block;
+        transition: all 0.2s linear;
+
+        &.social_fb{
+          background-position: 0 0;
+
+          &:hover{background-position: 0 -43px}
+        }
+
+        &.social_tl{
+          background-position: -43px 0;
+
+          &:hover{background-position: -43px -43px}
+        }
+
+        &.social_tw{
+          background-position: -86px 0;
+
+          &:hover{background-position: -86px -43px}
+        }
+
+        &.social_vb{
+          background-position: -129px 0;
+
+          &:hover{background-position: -129px -43px}
+        }
+      }
+    }
+  }
+
+  .header_middle{
+    padding: 2rem 0;
+    .logo{
+      
+    }
+
+    .request{
+      display: flex;
+      justify-content: flex-end;
+      .request_btn{
+
+      }
+    }
+  }
+
+  .header_menu{
+    .search_form{
+      input[type='search']{
+        height: 2.5375rem;
+      }
+    }
+    
+    .main_menu{
+      background: $mainBlue;
+
+      .dropdown{
+        li{
+          a{color: #fff}
+
+          &.is-active{
+            a{
+              background: #fff;
+              color: $mainBlue;
+            }
+          }
+
+          &:hover{
+            background: #fff;
+
+            a{color: $mainBlue;}
+          }
+       
+          .menu{
+            background: $mainBlue;
+          }
+        }
+      }
+     
+
+    }
+  }
+}
+
+.main_content{
+  .slider{
+    background: #fff;
+    height: 18vw;
+  }
+  
+  .main_info{
+    .info_block{
+      .info_header{
+        color: #fff;
+        background: $mainBlue;
+        border-bottom: 2px solid $mainRed;
+      }
+
+      .info_footer{
+        color: #fff;
+        background: $mainBlue;
+        border-top: 2px solid $mainRed;
+      }
+    }
+  }
+
+  .r_menu{
+    .important_title,
+    .last_title{
+      color: #fff;
+      background: $mainBlue;
+      border-bottom: 2px solid $mainRed;
+    }
+
+    .important .imp_block,
+    .last .last_block{
+      img{
+        height: 8vw;
+        width: 6vw;
+      }
+    }
+  }
+}
+
+.footer{
+  color: #fff;
+  background: $mainBlue;
+  border-bottom: 4px solid $mainRed;
+  
+  a{
+    color: #fff;
+  }
+
+  .social_icons{
+    .social{
+      background: url(../img/sprite.png) no-repeat center;
+      width: 43px;
+      height: 43px;
+      display: block;
+      transition: all 0.2s linear;
+
+      &.social_fb{
+        background-position: 0 0;
+
+        &:hover{background-position: 0 -43px}
+      }
+
+      &.social_tl{
+        background-position: -43px 0;
+
+        &:hover{background-position: -43px -43px}
+      }
+
+      &.social_tw{
+        background-position: -86px 0;
+
+        &:hover{background-position: -86px -43px}
+      }
+
+      &.social_vb{
+        background-position: -129px 0;
+
+        &:hover{background-position: -129px -43px}
+      }
+    }
+  }
+
+}
