@@ -6933,8 +6933,10 @@ html.is-reveal-open {
       .column-block > :last-child {
         margin-bottom: 0; } }
 
-body img {
-  max-width: 100%; }
+body {
+  font-family: 'FiraSans', sans-serif !important; }
+  body img {
+    max-width: 100%; }
 
 .header {
   border-top: 4px solid #fe0000; }
@@ -6981,6 +6983,9 @@ body img {
       -webkit-justify-content: flex-end;
           -ms-flex-pack: end;
               justify-content: flex-end; }
+  .header .header_menu .search_form.row {
+    padding-right: 0.9375rem;
+    padding-left: 0.9375rem; }
   .header .header_menu .search_form input[type='search'] {
     height: 2.5375rem; }
   .header .header_menu .main_menu {
@@ -6994,38 +6999,77 @@ body img {
       background: #fff; }
       .header .header_menu .main_menu .dropdown li:hover a {
         color: #0060ff; }
-    .header .header_menu .main_menu .dropdown li .menu {
+    .header .header_menu .main_menu .dropdown li .submenu .is-submenu-item {
       background: #0060ff; }
 
-.main_content .slider {
-  background: #fff;
-  height: 18vw; }
-
-.main_content .main_info .info_block .info_header {
-  color: #fff;
-  background: #0060ff;
-  border-bottom: 2px solid #fe0000; }
-
-.main_content .main_info .info_block .info_footer {
-  color: #fff;
-  background: #0060ff;
-  border-top: 2px solid #fe0000; }
-
-.main_content .r_menu .important_title,
-.main_content .r_menu .last_title {
-  color: #fff;
-  background: #0060ff;
-  border-bottom: 2px solid #fe0000; }
-
-.main_content .r_menu .important .imp_block img,
-.main_content .r_menu .last .last_block img {
-  height: 8vw;
-  width: 6vw; }
+.main_content {
+  padding-right: 0.9375rem;
+  padding-left: 0.9375rem; }
+  .main_content .slider {
+    background: #fff;
+    height: 18vw; }
+    .main_content .slider .slick-next {
+      right: 0; }
+    .main_content .slider .slick-prev {
+      left: 0; }
+    .main_content .slider .slick-next:before,
+    .main_content .slider .slick-prev:before {
+      color: #fe0000;
+      z-index: 40; }
+    .main_content .slider img {
+      height: 18vw; }
+  .main_content .main_info .info_block {
+    margin-bottom: 5rem; }
+    .main_content .main_info .info_block .info_header {
+      color: #fff;
+      background: #0060ff;
+      border-bottom: 2px solid #fe0000; }
+    .main_content .main_info .info_block .info_content {
+      padding: 1rem;
+      background: #bcbcbc; }
+      .main_content .main_info .info_block .info_content .info_basic .birth_day_title,
+      .main_content .main_info .info_block .info_content .info_basic .last_see_title {
+        margin-top: 1rem; }
+      .main_content .main_info .info_block .info_content .info_text {
+        margin-top: 1rem; }
+        .main_content .main_info .info_block .info_content .info_text.columns {
+          padding-right: 0;
+          padding-left: 0; }
+    .main_content .main_info .info_block .info_footer {
+      color: #fff;
+      background: #0060ff;
+      border-top: 2px solid #fe0000; }
+      .main_content .main_info .info_block .info_footer .tags.row {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; }
+      .main_content .main_info .info_block .info_footer .tags .tag {
+        color: #fff; }
+      .main_content .main_info .info_block .info_footer .read_more {
+        color: #fff;
+        text-align: right; }
+    .main_content .main_info .info_block .info_header.row,
+    .main_content .main_info .info_block .info_footer.row {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; }
+  .main_content .main_info .pagination {
+    margin-top: 1rem; }
+  .main_content .r_menu .important_title,
+  .main_content .r_menu .last_title {
+    color: #fff;
+    background: #0060ff;
+    border-bottom: 2px solid #fe0000; }
+  .main_content .r_menu .last_title {
+    margin-top: 3rem; }
+  .main_content .r_menu .important .imp_block img,
+  .main_content .r_menu .last .last_block img {
+    height: 8vw;
+    width: 6vw; }
 
 .footer {
   color: #fff;
   background: #0060ff;
-  border-bottom: 4px solid #fe0000; }
+  border-bottom: 4px solid #fe0000;
+  padding: 1rem 0; }
   .footer a {
     color: #fff; }
   .footer .social_icons .social {

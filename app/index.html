@@ -15,10 +15,10 @@
 <div class="header_top_menu row align-spaced align-middle">
 	<div class="row medium-6 large-4 telephones align-justify">
 		<span class="tel_img columns large-1"></span>
-		<span class="tel column large-4">+38 (096) 580 76 15</span>
-		<span class="tel column large-4">+38 (096) 580 76 15</span>
+		<span class="tel column large-5">+38 (096) 580 76 15</span>
+		<span class="tel column large-5">+38 (096) 580 76 15</span>
 	</div>
-	<div class="row medium-6 large-4 social_icons align-right">
+	<div class="row medium-6 large-5 social_icons align-right">
 		<a href="#" class="social_fb social" title="facebook"></a>
 		<a href="#" class="social_tl social" title="telegram"></a>
 		<a href="#" class="social_tw social" title="twitter"></a>
@@ -65,8 +65,8 @@
 	</div>
 </nav>
 </header>
-<main class="main_content row">
-	<div class="slider columns large-10 align-center">
+<main class="main_content row align-justify">
+	<div class="slider columns large-12 align-center">
 		<div class="slide_1">
 			<img src="img/profile-default.jpg" alt="">
 		</div>
@@ -87,15 +87,16 @@
 		</div>
 	</div>
 	<section class="main_info columns large-8 row">
-		<article class="columns info_block">
-			<header class="info_header columns">
+		<article class="columns large-12 info_block">
+			<header class="info_header row">
 				<span class="post_date">Дата 00.00.0000</span>
 			</header>
-			<div class="info_content row expanded">
-				<img src="img/profile-default.jpg" alt="" class="info_img columns large-4">
+			<div class="info_content row large-12">
+				<img src="img/profile-default.jpg" alt="" class="info_img large-4">
 				<div class="info_basic columns large-6">
 					<h4 class="initials" id="initials">Прізвище Ім'я По батькові</h4>
-					<span class="year" id="year">03.12.1997</span>
+					<h5 class="birth_day_title">Дата народження</h5>
+					<span class="birth_day" id="birth_day">03.12.1997</span>
 					<h5 class="last_see_title">Дата і час останньої контакту</h5>
 					<span class="last_see_date" id="last_see_date">22.11.2018</span>
 					<span class="last_see_time" id="last_see_time">12:00</span>
@@ -107,46 +108,60 @@
 					<p class="last_place_to_stay-text" id="last_place_to_stay">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deserunt dignissimos impedit in ipsa labore magnam neque, nostrum officia ratione repellendus, saepe tempore! Cumque earum eius magnam qui ratione saepe.</p>
 				</div>
 			</div>
-			<footer class="info_footer columns">
-				<span class="tags columns large-12">Мітки:</span>
-				<a href="#" class="large-1">Мітка1</a>
+			<footer class="info_footer row align-justify">
+				<div class="row tags large-8">
+					<span class="tag_list large-2">Мітки:</span>
+					<a href="#" class="large-2 tag">Мітка1</a>
+					<a href="#" class="large-2 tag">Мітка2</a>
+				</div>
+				<a class="read_more large-4">Читать больше</a>
 			</footer>
 		</article>
-		<div class="pagination row align-center">
-			<div class="pag_block columns large-1"><<</div>
-			<div class="pag_block columns large-1">1</div>
-			<div class="pag_block columns large-1">2</div>
-			<div class="pag_block columns large-1">3</div>
-			<div class="pag_block columns large-1">>></div>
-		</div>
+		<nav aria-label="Pagination">
+			<ul class="pagination text-center">
+				<li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>
+				<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+				<li><a href="#" aria-label="Page 2">2</a></li>
+				<li><a href="#" aria-label="Page 3">3</a></li>
+				<li><a href="#" aria-label="Page 4">4</a></li>
+				<li class="ellipsis" aria-hidden="true"></li>
+				<li><a href="#" aria-label="Page 12">12</a></li>
+				<li><a href="#" aria-label="Page 13">13</a></li>
+				<li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+			</ul>
+		</nav>
 	</section>
-	<aside class="r_menu columns large-4 row">
+	<aside class="r_menu columns large-3 row">
 		<h3 class="important_title columns">Важливо</h3>
 		<section class="important columns">
 			<article class="imp_block row">
-				<img src="img/profile-default.jpg" alt="" class="columns large-4">
+				<img src="img/profile-default.jpg" alt="" class="large-4">
 				<div class="imp_content columns large-8">
-					<h5 class="initials">ПІБ</h5>
+					<h6 class="initials">Прізвище Ім'я По батькові</h6>
 					<span class="year">РІК</span>
 				</div>
-				<a href="#" class="read_more columns large-12">Читати більше</a>
+				<footer class="r_menu_block_footer row large-12 align-right">
+					<a href="#" class="read_more columns large-6">Читати більше</a>
+				</footer>
 			</article>
 		</section>
 		<h3 class="columns last_title">Останні</h3>
 		<section class="last columns">
 			<article class="last_block row">
-				<img src="img/profile-default.jpg" alt="" class="columns large-4">
+				<img src="img/profile-default.jpg" alt="" class="large-4">
 				<div class="last_content columns large-8">
-					<h5 class="initials ">ПІБ</h5>
+					<h6 class="initials ">Прізвище Ім'я По батькові</h6>
 					<span class="year">РІК</span>
 				</div>
-				<a href="#" class="read_more columns large-12">Читати більше</a>
+				<footer class="r_menu_block_footer row large-12 align-right">
+					<a href="#" class="read_more columns large-6">Читати більше</a>
+				</footer>
 			</article>
 		</section>
 	</aside>
 </main>
-<footer class="footer row">
-		<div class="columns large-4">
+<footer class="footer row align-center">
+	<div class="columns large-4">
 				<h5>Знаклі безвісти</h5>
 				<ul class="vertical dropdown menu" data-dropdown-menu>
 					<li><a href="#">Дорослі</a></li>
@@ -155,7 +170,7 @@
 					<li><a href="#">Зниклі за кордоном</a></li>
 				</ul>
 		</div>
-		<div class="columns large-4">
+	<div class="columns large-4">
 			<h5>Матеріальні цінності</h5>
 			<ul class="vertical dropdown menu" data-dropdown-menu>
 				<li><a href="#">Автівки</a></li>
@@ -164,7 +179,7 @@
 				<li><a href="#"></a></li>
 			</ul>
 		</div>
-	<div class="columns large-4">
+	<div class="columns large-2">
 		<h5>Соціальні медіа</h5>
 		<div class="social_icons row">
 			<span class="social_fb social"></span>
