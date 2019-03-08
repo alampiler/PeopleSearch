@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="header">
-<div class="header_top_menu row align-spaced align-middle">
+<div class="header_top_menu row align-justify align-middle">
 	<div class="row medium-6 large-4 telephones align-justify">
 		<span class="tel_img columns large-1"></span>
 		<span class="tel column large-5">+38 (096) 580 76 15</span>
@@ -40,8 +40,8 @@
 	</div>
 	<div class="columns large-12 main_menu">
 		<ul class="dropdown menu " data-dropdown-menu>
-			<li class="is-active"><a href="#">Головна</a></li>
-			<li>
+			<li class="is-active home"><a href="#">Головна</a></li>
+			<li class="search_p">
 				<a href="#">Зниклі безвісти</a>
 				<ul class="menu">
 					<li><a href="#">Дорослі</a></li>
@@ -50,23 +50,26 @@
 					<li><a href="#">Зниклі за кордоном</a></li>
 				</ul>
 			</li>
-			<li>
+			<li class="search_m">
 				<a href="#">Матеріальні цінності</a>
 				<ul class="menu">
 					<li><a href="#">Автівки</a></li>
 					<li><a href="#">Коштовності</a></li>
 					<li><a href="#">Мобільні телефони</a></li>
-					<li><a href="#"></a></li>
 				</ul>
 			</li>
-			<li><a href="#">Про нас</a></li>
-			<li><a href="#">Запитання і відповіді</a></li>
+			<li class="about">
+				<a href="#">Про нас</a>
+			</li>
+			<li class="faq">
+				<a href="#">Запитання і відповіді</a>
+			</li>
 		</ul>
 	</div>
 </nav>
 </header>
 <main class="main_content row align-justify">
-	<div class="slider columns large-12 align-center">
+	<div class="slider large-12">
 		<div class="slide_1">
 			<img src="img/profile-default.jpg" alt="">
 		</div>
@@ -85,6 +88,18 @@
 		<div class="slide_6">
 			<img src="img/profile-default.jpg" alt="">
 		</div>
+		<div class="slide_7">
+			<img src="img/profile-default.jpg" alt="">
+		</div>
+		<div class="slide_8">
+			<img src="img/profile-default.jpg" alt="">
+		</div>
+		<div class="slide_9">
+			<img src="img/profile-default.jpg" alt="">
+		</div>
+		<div class="slide_10">
+			<img src="img/profile-default.jpg" alt="">
+		</div>
 	</div>
 	<section class="main_info columns large-8 row">
 		<article class="columns large-12 info_block">
@@ -95,11 +110,13 @@
 				<img src="img/profile-default.jpg" alt="" class="info_img large-4">
 				<div class="info_basic columns large-6">
 					<h4 class="initials" id="initials">Прізвище Ім'я По батькові</h4>
-					<h5 class="birth_day_title">Дата народження</h5>
+					<h5 class="birth_day_title">Дата народження:</h5>
 					<span class="birth_day" id="birth_day">03.12.1997</span>
-					<h5 class="last_see_title">Дата і час останньої контакту</h5>
+					<h5 class="last_see_title">Дата і час останньої контакту:</h5>
 					<span class="last_see_date" id="last_see_date">22.11.2018</span>
 					<span class="last_see_time" id="last_see_time">12:00</span>
+					<h5 class="last_see_city_title">Місце проживання:</h5>
+					<span class="last_see_city" id="last_see_city">Київ</span>
 				</div>
 				<div class="info_text columns large-12">
 					<h5 class="spec_features">Особливі прикмети:</h5>
@@ -114,7 +131,7 @@
 					<a href="#" class="large-2 tag">Мітка1</a>
 					<a href="#" class="large-2 tag">Мітка2</a>
 				</div>
-				<a class="read_more large-4">Читать больше</a>
+				<a class="read_more large-4">Читати більше</a>
 			</footer>
 		</article>
 		<nav aria-label="Pagination">
@@ -136,7 +153,7 @@
 		<section class="important columns">
 			<article class="imp_block row">
 				<img src="img/profile-default.jpg" alt="" class="large-4">
-				<div class="imp_content columns large-8">
+				<div class="imp_content columns large-8 text-center">
 					<h6 class="initials">Прізвище Ім'я По батькові</h6>
 					<span class="year">РІК</span>
 				</div>
@@ -149,7 +166,7 @@
 		<section class="last columns">
 			<article class="last_block row">
 				<img src="img/profile-default.jpg" alt="" class="large-4">
-				<div class="last_content columns large-8">
+				<div class="last_content columns large-8 text-center">
 					<h6 class="initials ">Прізвище Ім'я По батькові</h6>
 					<span class="year">РІК</span>
 				</div>
@@ -162,8 +179,8 @@
 </main>
 <footer class="footer row align-center">
 	<div class="columns large-4">
-				<h5>Знаклі безвісти</h5>
-				<ul class="vertical dropdown menu" data-dropdown-menu>
+				<h5 class="large-6">Зниклі безвісти</h5>
+				<ul class="vertical menu">
 					<li><a href="#">Дорослі</a></li>
 					<li><a href="#">Діти</a></li>
 					<li><a href="#">Зона ООС</a></li>
@@ -171,21 +188,28 @@
 				</ul>
 		</div>
 	<div class="columns large-4">
-			<h5>Матеріальні цінності</h5>
-			<ul class="vertical dropdown menu" data-dropdown-menu>
+			<h5 class="large-6">Матеріальні цінності</h5>
+			<ul class="vertical menu">
 				<li><a href="#">Автівки</a></li>
 				<li><a href="#">Коштовності</a></li>
 				<li><a href="#">Мобільні телефони</a></li>
-				<li><a href="#"></a></li>
 			</ul>
 		</div>
 	<div class="columns large-2">
-		<h5>Соціальні медіа</h5>
+		<h5 class="large-10">Соціальні медіа</h5>
 		<div class="social_icons row">
-			<span class="social_fb social"></span>
-			<span class="social_tl social"></span>
-			<span class="social_tw social"></span>
-			<span class="social_vb social"></span>
+			<span class="social_fb social">
+				<a href="#"></a>
+			</span>
+			<span class="social_tl social">
+					<a href="#"></a>
+			</span>
+			<span class="social_tw social">
+					<a href="#"></a>
+			</span>
+			<span class="social_vb social">
+					<a href="#"></a>
+			</span>
 		</div>
 	</div>
 </footer>

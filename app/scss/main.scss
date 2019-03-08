@@ -9,9 +9,7 @@
 body{
   font-family: 'FiraSans', sans-serif !important;
 
-  img{
-    max-width: 100%;
-  }
+  img{max-width: 100%}
 }
 
 .header {
@@ -21,7 +19,19 @@ body{
     background: $mainBlue;
     color: #fff;
 
+    &.row{
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem;
+    }
+
     .telephones {
+
+      &.row{
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+      }
+
+
       .tel_img {
         background: url("../img/sprite.png") no-repeat -176px -10px;
         display: block;
@@ -31,6 +41,12 @@ body{
     }
 
     .social_icons {
+
+      &.row{
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+      }
+
       .social {
         background: url(../img/sprite.png) no-repeat center;
         width: 43px;
@@ -41,33 +57,25 @@ body{
         &.social_fb {
           background-position: 0 0;
 
-          &:hover {
-            background-position: 0 -43px
-          }
+          &:hover {background-position: 0 -43px}
         }
 
         &.social_tl {
           background-position: -43px 0;
 
-          &:hover {
-            background-position: -43px -43px
-          }
+          &:hover {background-position: -43px -43px}
         }
 
         &.social_tw {
           background-position: -86px 0;
 
-          &:hover {
-            background-position: -86px -43px
-          }
+          &:hover {background-position: -86px -43px}
         }
 
         &.social_vb {
           background-position: -129px 0;
 
-          &:hover {
-            background-position: -129px -43px
-          }
+          &:hover {background-position: -129px -43px}
         }
       }
     }
@@ -76,17 +84,9 @@ body{
   .header_middle {
     padding: 2rem 0;
 
-    .logo {
-
-    }
-
     .request {
       display: flex;
       justify-content: flex-end;
-
-      .request_btn {
-
-      }
     }
   }
 
@@ -97,19 +97,19 @@ body{
         padding-left: 0.9375rem;
       }
 
-      input[type='search'] {
-        height: 2.5375rem;
-      }
+      input[type='search'] {height: 2.5375rem}
     }
 
     .main_menu {
       background: $mainBlue;
 
-      .dropdown {
+      .dropdown.menu > li.is-dropdown-submenu-parent > a::after{border-color: $mainRed transparent transparent}
+
+      .dropdown.menu {
+        z-index: 20;
+
         li {
-          a {
-            color: #fff
-          }
+          a {color: #fff}
 
           &.is-active {
             a {
@@ -121,16 +121,68 @@ body{
           &:hover {
             background: #fff;
 
-            a {
-              color: $mainBlue;
-            }
+            a {color: $mainBlue}
           }
 
           .submenu {
-
             .is-submenu-item {
-              background: $mainBlue;
+              a:hover{
+                background: $mainBlue;
+                color: #fff;
+              }
             }
+          }
+        }
+    
+        .home,
+        .search_p,
+        .search_m,
+        .about,
+        .faq{
+          a::before{
+            background: url(../img/sprite.png) no-repeat;
+            content: '';
+            display: inline-block;
+          }
+        }
+        
+        .home{
+          a::before{
+            background-position: -286px -59px;
+            width: 34px;
+            height: 28px;
+          }
+        }
+
+        .search_p{
+          a::before{
+            background-position: -242px -58px;
+            width: 10px;
+            height: 28px;
+          }
+        }
+
+        .search_m{
+          a::before{
+            background-position: -260px -60px;
+            width: 20px;
+            height: 28px;
+          }
+        }
+
+        .about{
+          a::before{
+            background-position: -181px -58px;
+            width: 27px;
+            height: 28px;
+          }
+        }
+
+        .faq{
+          a::before{
+            background-position: -211px -58px;
+            width: 28px;
+            height: 28px;
           }
         }
       }
@@ -142,28 +194,31 @@ body{
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
 
-
   .slider{
     background: #fff;
-    height: 18vw;
+    height: 14.3vw;
+    margin: 2rem auto;
 
-    .slick-next{
-      right: 0;
-    }
+    .slick-next{right: 0}
 
-    .slick-prev{
-      left: 0;
-    }
+    .slick-prev{left: 0}
+
+    .slick-next,
+    .slick-prev{z-index: 40}
 
     .slick-next:before,
-    .slick-prev:before{
-      color: $mainRed;
-      z-index: 40;
+    .slick-prev:before{color: $mainRed}
+
+    .slick-list{
+      z-index: 1;
+
+      .slick-track{
+        .slick-slide{
+          img{height: 14.3vw}
+        }
+      }
     }
 
-    img{
-      height: 18vw;
-    }
   }
   
   .main_info{
@@ -180,9 +235,15 @@ body{
         padding: 1rem;
         background: $mainGreyLight;
 
+        .info_img{height: 20vw}
+
         .info_basic{
           .birth_day_title,
-          .last_see_title{margin-top: 1rem}
+          .last_see_title,
+          .last_see_city_title{
+            margin-top: 1rem;
+            border-bottom: 1px solid $mainRed;
+          }
         }
 
         .info_text{
@@ -206,9 +267,7 @@ body{
             padding-left: 0.9375rem;
           }
 
-          .tag{
-            color: #fff;
-          }
+          .tag{color: #fff}
         }
         
         .read_more{
@@ -226,9 +285,7 @@ body{
       }
     }
 
-    .pagination{
-      margin-top: 1rem;
-    }
+    .pagination{margin-top: 1rem}
   }
 
   .r_menu{
@@ -239,9 +296,7 @@ body{
       border-bottom: 2px solid $mainRed;
     }
 
-    .last_title{
-      margin-top: 3rem;
-    }
+    .last_title{margin-top: 3rem}
 
     .important .imp_block,
     .last .last_block{
@@ -259,11 +314,22 @@ body{
   border-bottom: 4px solid $mainRed;
   padding: 1rem 0;
 
+  h5{
+    border-bottom: 1px solid $mainRed;
+    margin-bottom: 1rem;
+  }
+
   a {
     color: #fff;
+    padding: 0.7rem 0;
   }
 
   .social_icons {
+    &.row{
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem;
+    }
+
     .social {
       background: url(../img/sprite.png) no-repeat center;
       width: 43px;
@@ -274,35 +340,26 @@ body{
       &.social_fb {
         background-position: 0 0;
 
-        &:hover {
-          background-position: 0 -43px
-        }
+        &:hover {background-position: 0 -43px}
       }
 
       &.social_tl {
         background-position: -43px 0;
 
-        &:hover {
-          background-position: -43px -43px
-        }
+        &:hover {background-position: -43px -43px}
       }
 
       &.social_tw {
         background-position: -86px 0;
 
-        &:hover {
-          background-position: -86px -43px
-        }
+        &:hover {background-position: -86px -43px}
       }
 
       &.social_vb {
         background-position: -129px 0;
 
-        &:hover {
-          background-position: -129px -43px
-        }
+        &:hover {background-position: -129px -43px}
       }
     }
   }
-
 }
