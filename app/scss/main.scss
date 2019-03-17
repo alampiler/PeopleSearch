@@ -10,6 +10,14 @@ body{
   font-family: 'FiraSans', sans-serif !important;
 
   img{max-width: 100%}
+
+  a{
+    transition: all 0.3s linear;
+    
+    &:hover{
+      text-shadow: 0 0 10px $mainBlue;
+    }
+  }
 }
 
 .header {
@@ -85,8 +93,9 @@ body{
     padding: 2rem 0;
 
     .request {
-      display: flex;
-      justify-content: flex-end;
+      .button{
+        margin: 0;
+      }
     }
   }
 
@@ -97,7 +106,16 @@ body{
         padding-left: 0.9375rem;
       }
 
-      input[type='search'] {height: 2.5375rem}
+      input[type='search'] {
+        height: 2.5375rem;
+        border: 1px solid $mainBlue;
+
+        &:focus{border: 1px solid $mainRed}
+        
+        &:focus + .search_btn{
+          background: $mainRed;
+        }
+      }
     }
 
     .main_menu {
@@ -105,18 +123,14 @@ body{
 
       .dropdown.menu > li.is-dropdown-submenu-parent > a::after{border-color: $mainRed transparent transparent}
 
-      .dropdown.menu {
+      .accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after{border-color: $mainRed transparent transparent}
+
+      .dropdown.menu,
+      .accordion-menu{
         z-index: 20;
 
         li {
           a {color: #fff}
-
-          &.is-active {
-            a {
-              background: #fff;
-              color: $mainBlue;
-            }
-          }
 
           &:hover {
             background: #fff;
@@ -139,50 +153,89 @@ body{
         .search_m,
         .about,
         .faq{
-          a::before{
+          &::before{
             background: url(../img/sprite.png) no-repeat;
             content: '';
             display: inline-block;
+            position: relative;
+            margin-right: 0.5rem;
           }
         }
         
         .home{
-          a::before{
+          &::before{
             background-position: -286px -59px;
             width: 34px;
             height: 28px;
+            top: 0.2rem;
           }
         }
 
         .search_p{
-          a::before{
+          &::before{
             background-position: -242px -58px;
             width: 10px;
             height: 28px;
+            top: 0.1rem;
           }
         }
 
         .search_m{
-          a::before{
+          &::before{
             background-position: -260px -60px;
             width: 20px;
             height: 28px;
+            top: 0.3rem;
           }
         }
 
         .about{
-          a::before{
+          &::before{
             background-position: -181px -58px;
             width: 27px;
             height: 28px;
+            top: 0.3rem;
           }
         }
 
         .faq{
-          a::before{
+          &::before{
             background-position: -211px -58px;
             width: 28px;
             height: 28px;
+            top: 0.3rem;
+          }
+        }
+      }
+
+      .accordion-menu{
+        li {
+          &:hover {
+            background: $mainBlue;
+
+            a {color: #fff}
+
+            .submenu {
+                a{
+                  border-bottom: 1px solid $mainRed;
+                }
+            }
+          }
+
+          .search_p{
+            &::before{margin:0 1.3rem 0 0.7rem}
+          }
+
+          .search_m{
+            &::before{margin:0 0.9rem 0 0.45rem}
+          }
+
+          .about{
+            &::before{margin:0 0.65rem 0 0.2rem}
+          }
+
+          .faq{
+            &::before{margin:0 0.65rem 0 0.2rem}
           }
         }
       }
@@ -193,6 +246,10 @@ body{
 .main_content{
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
+
+  .breadcrumbs{
+    margin: 1rem 0;
+  }
 
   .slider{
     background: #fff;
@@ -214,7 +271,10 @@ body{
 
       .slick-track{
         .slick-slide{
-          img{height: 14.3vw}
+          img{
+            height: 14.3vw;
+            box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
+          }
         }
       }
     }
@@ -222,7 +282,12 @@ body{
   }
   
   .main_info{
+
+      a:hover{text-shadow: 0 0 10px #fff}
+
+
     .info_block{
+      box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
       margin-bottom: 5rem;
 
       .info_header{
@@ -240,9 +305,13 @@ body{
         .info_basic{
           .birth_day_title,
           .last_see_title,
-          .last_see_city_title{
+          .last_see_city_title,
+          .sex_title,
+          .contacts_tel_title{
+            padding-top: 1rem;
             margin-top: 1rem;
-            border-bottom: 1px solid $mainRed;
+            border-top: 1px solid $mainRed;
+            font-weight: bold;
           }
         }
 
@@ -294,16 +363,106 @@ body{
       color: #fff;
       background: $mainBlue;
       border-bottom: 2px solid $mainRed;
+      box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
     }
 
     .last_title{margin-top: 3rem}
 
     .important .imp_block,
     .last .last_block{
+      border-top: 1px solid $mainRed;
+      border-bottom: 1px solid $mainRed;
+      margin-bottom: 1rem;
+      padding: 1rem 0.4rem;
+      box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
+      background: $mainGreyLight;
+
+      .r_menu_block_footer{
+        margin-top: 1rem;
+        padding: 0;
+      }
+
       img{
         height: 8vw;
         width: 6vw;
       }
+    }
+  }
+
+  .feedback{
+    margin: 2rem auto 4rem auto;
+    background: $mainGreyLight;
+    padding: 0;
+    box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
+    border-top: 1px solid $mainRed;
+    border-bottom: 1px solid $mainRed;
+
+
+    .feedback_title{
+      color: #fff;
+      background: $mainBlue;
+      padding: 1rem 0;
+      border-bottom: 2px solid $mainRed;
+    }
+
+    .feedback_form{
+      padding: 1rem 2rem;
+
+      input{
+        border: 1px solid $mainBlue;
+
+        &:focus{border: 1px solid $mainRed}
+      }
+
+      .feedback_button{
+        color: #fff;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.requestPeopleModal,
+.requestMaterialModal,
+.requestModal{
+  padding:0;
+  border: none;
+  border-top: 1px solid $mainRed;
+  border-bottom: 1px solid $mainRed;
+
+  .requestModal_title{
+    background: $mainBlue;
+    color: #fff;
+    padding: 0.5rem;
+    border-bottom: 2px solid $mainRed;
+  }
+
+  .close-button{
+    color: $mainRed;
+
+    &:hover{color: #111}
+  }
+
+  form{
+    padding: 1rem;
+
+    label{font-size: 100%}
+
+    span{margin: 0.4rem 0}
+
+    textarea{resize: none}
+
+    input, select, textarea{
+      border: 1px solid $mainBlue;
+
+      &:focus{border: 1px solid $mainRed}
+    }
+
+    button.alert{
+      color: #fff;
+      margin: 0;
+
+      &:hover{color: #fff}
     }
   }
 }
@@ -322,6 +481,10 @@ body{
   a {
     color: #fff;
     padding: 0.7rem 0;
+
+    &:hover{
+      text-shadow: 0 0 10px #fff;
+    }
   }
 
   .social_icons {
@@ -363,3 +526,256 @@ body{
     }
   }
 }
+
+@media screen and (max-width: 1023px){
+.main_content{
+  .main_info{
+    .info_block{
+      .info_content{
+        .info_img{
+          height: 30vw;
+          margin: 0 auto 1rem auto;
+        }
+        
+        .info_basic{
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+}
+
+@media screen and (max-width: 940px){
+  .header{
+    .button{font-size: 80%}
+
+    .header_top_menu{
+      .telephones{
+        .tel{
+          font-size: 90%;
+          padding-top: 0.2rem;
+        }
+      }
+    }
+  }
+
+  .main_content{
+    .r_menu{
+      .important .imp_block,
+      .last .last_block{font-size: 80%}
+    }
+  }
+}
+
+@media screen and (max-width: 830px){
+  .header{
+    .header_top_menu{
+      .telephones{
+        .tel{
+          font-size: 79%;
+        }
+      }
+    }
+  }
+
+  .main_content{
+    .slider{
+      height: 22.3vw;
+      margin: 2rem auto;
+
+      .slick-list{
+
+        .slick-track{
+          .slick-slide{
+            img{
+              height: 22.3vw;
+            }
+          }
+        }
+      }
+    }
+
+    .main_info{
+      .info_block{
+        .info_footer{
+          font-size: 80%;
+          padding: 0.4rem 0;
+        }
+      }
+    }
+
+    .r_menu{
+      .important .imp_block,
+      .last .last_block{
+        padding: 0.4rem 0.4rem;
+        h6, span{
+          font-size: 0.9rem;
+        }
+
+      }
+    }
+  }
+
+  .footer{
+    h5{
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 730px){
+
+  .main_content{
+    .main_info{
+
+      .info_block{
+        .info_footer{font-size: 70%}
+      }
+
+      .pagination{
+        li{font-size: 62%}
+      }
+    }
+  }
+
+  .footer{
+    h5{
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 639px){
+  .header{
+    .header_top_menu{
+      .telephones{
+
+        &.row{padding-right: 0}
+
+        .tel_img{display: none}
+
+        .tel{
+          margin-top: 0.4rem;
+          font-size: 100%;
+          text-align: center;
+        }
+      }
+
+      .social_icons{
+        justify-content: center;
+        margin: 0.5rem 0;
+      }
+    }
+
+    .header_middle{
+      .logo_block{
+        .logo{
+          margin: 0 auto;
+        }
+      }
+
+      .request{
+        text-align: center;
+        margin-top: 2rem;
+
+        button{
+          font-size: 100%;
+        }
+      }
+    }
+  }
+
+  .main_content{
+    .main_info{
+
+      .info_block{
+
+        .info_content{
+          .info_img{height: 50vw}
+        }
+
+
+        .info_footer{font-size: 100%}
+      }
+
+      .pagination{
+        li{font-size: 100%}
+      }
+    }
+
+    .r_menu{
+      .important .imp_block,
+      .last .last_block{
+        img{
+          margin: 0 auto;
+          height: 50vw;
+          padding-bottom: 2rem;
+        }
+
+        span, h6{
+          font-size: 1.2rem;
+        }
+
+        .r_menu_block_footer{
+          text-align: center;
+          a{
+            font-size: 120%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .footer{
+    text-align: center;
+
+    h5{
+      margin-top: 1.6rem;
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      border-top: 1px solid $mainRed;
+    }
+
+    .social_icons{
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .main_content{
+    .main_info{
+      .info_block{
+        .info_footer{font-size: 70%}
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px){
+  .header{
+    .header_menu{
+      .search_form{
+        input{
+          padding: 0.2rem;
+        }
+
+        font-size: 80%;
+      }
+    }
+  }
+
+  .main_content{
+    .main_info{
+
+      .info_block{
+        .info_footer{
+          font-size: 58%;
+        }
+      }
+    }
+  }
+}
+
