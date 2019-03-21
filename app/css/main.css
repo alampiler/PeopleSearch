@@ -7110,6 +7110,13 @@ body {
                 box-shadow: 0 1px 5px 1px black; }
   .main_content .main_info a:hover {
     text-shadow: 0 0 10px #fff; }
+  .main_content .main_info .breadcrumbs li {
+    font-size: 100%;
+    border-bottom: 1px solid #0060ff;
+    border-top: 1px solid #0060ff; }
+    .main_content .main_info .breadcrumbs li a:hover {
+      text-decoration: none;
+      text-shadow: 0 0 10px #0060ff; }
   .main_content .main_info .info_block {
     -webkit-box-shadow: 0 1px 5px 1px black;
             box-shadow: 0 1px 5px 1px black;
@@ -7123,11 +7130,14 @@ body {
       background: #bcbcbc; }
       .main_content .main_info .info_block .info_content .info_img {
         height: 20vw; }
-      .main_content .main_info .info_block .info_content .info_basic .birth_day_title,
-      .main_content .main_info .info_block .info_content .info_basic .last_see_title,
-      .main_content .main_info .info_block .info_content .info_basic .last_see_city_title,
-      .main_content .main_info .info_block .info_content .info_basic .sex_title,
-      .main_content .main_info .info_block .info_content .info_basic .contacts_tel_title {
+      .main_content .main_info .info_block .info_content .birth_day_title,
+      .main_content .main_info .info_block .info_content .last_see_title,
+      .main_content .main_info .info_block .info_content .last_see_city_title,
+      .main_content .main_info .info_block .info_content .sex_title,
+      .main_content .main_info .info_block .info_content .contacts_tel_title,
+      .main_content .main_info .info_block .info_content .type_title,
+      .main_content .main_info .info_block .info_content .spec_features,
+      .main_content .main_info .info_block .info_content .last_place_to_stay {
         padding-top: 1rem;
         margin-top: 1rem;
         border-top: 1px solid #fe0000;
@@ -7309,11 +7319,35 @@ body {
       .footer .social_icons .social.social_vb:hover {
         background-position: -129px -43px; }
 
+@media screen and (min-width: 1670px) {
+  .main_content .slider {
+    height: 242px; }
+    .main_content .slider .slick-list .slick-track .slick-slide img {
+      height: 242px; }
+  .main_content .main_info .info_block .info_content .info_img {
+    height: 330px; }
+  .main_content .r_menu .important .imp_block img,
+  .main_content .r_menu .last .last_block img {
+    height: 133px;
+    width: 133px; }
+  .main_content .feedback {
+    max-width: 51%; } }
+
+@media screen and (min-width: 1400px) {
+  .header .header_top_menu .telephones {
+    max-width: 35%; } }
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .header .header_top_menu .telephones {
+    max-width: 42%; } }
+
 @media screen and (max-width: 1023px) {
   .main_content .main_info .info_block .info_content .info_img {
     height: 30vw;
     margin: 0 auto 1rem auto; }
   .main_content .main_info .info_block .info_content .info_basic {
+    text-align: center; }
+  .main_content .main_info .info_block .info_content .info_text h5, .main_content .main_info .info_block .info_content .info_text p:first-of-type {
     text-align: center; } }
 
 @media screen and (max-width: 940px) {
@@ -7386,7 +7420,7 @@ body {
   .main_content .r_menu .important .imp_block img,
   .main_content .r_menu .last .last_block img {
     margin: 0 auto;
-    height: 50vw;
+    height: 60vw;
     padding-bottom: 2rem; }
   .main_content .r_menu .important .imp_block span, .main_content .r_menu .important .imp_block h6,
   .main_content .r_menu .last .last_block span,

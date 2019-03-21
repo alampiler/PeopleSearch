@@ -93,9 +93,7 @@ body{
     padding: 2rem 0;
 
     .request {
-      .button{
-        margin: 0;
-      }
+      .button{margin: 0}
     }
   }
 
@@ -112,9 +110,7 @@ body{
 
         &:focus{border: 1px solid $mainRed}
         
-        &:focus + .search_btn{
-          background: $mainRed;
-        }
+        &:focus + .search_btn{background: $mainRed}
       }
     }
 
@@ -216,9 +212,7 @@ body{
             a {color: #fff}
 
             .submenu {
-                a{
-                  border-bottom: 1px solid $mainRed;
-                }
+                a{border-bottom: 1px solid $mainRed}
             }
           }
 
@@ -247,9 +241,7 @@ body{
     padding-right: 0.9375rem;
     padding-left: 0.9375rem;
 
-  .breadcrumbs{
-    margin: 1rem 0;
-  }
+  .breadcrumbs{margin: 1rem 0}
 
   .slider{
     background: #fff;
@@ -278,13 +270,26 @@ body{
         }
       }
     }
-
   }
   
   .main_info{
 
-      a:hover{text-shadow: 0 0 10px #fff}
+    a:hover{text-shadow: 0 0 10px #fff}
 
+    .breadcrumbs{
+      li{
+        font-size: 100%;
+        border-bottom: 1px solid $mainBlue;
+        border-top: 1px solid $mainBlue;
+
+        a{
+          &:hover{
+            text-decoration: none;
+            text-shadow: 0 0 10px $mainBlue;
+          }
+        }
+      }
+    }
 
     .info_block{
       box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
@@ -302,18 +307,19 @@ body{
 
         .info_img{height: 20vw}
 
-        .info_basic{
           .birth_day_title,
           .last_see_title,
           .last_see_city_title,
           .sex_title,
-          .contacts_tel_title{
+          .contacts_tel_title,
+          .type_title,
+          .spec_features,
+          .last_place_to_stay{
             padding-top: 1rem;
             margin-top: 1rem;
             border-top: 1px solid $mainRed;
             font-weight: bold;
           }
-        }
 
         .info_text{
           margin-top: 1rem;
@@ -482,9 +488,7 @@ body{
     color: #fff;
     padding: 0.7rem 0;
 
-    &:hover{
-      text-shadow: 0 0 10px #fff;
-    }
+    &:hover{text-shadow: 0 0 10px #fff}
   }
 
   .social_icons {
@@ -527,23 +531,79 @@ body{
   }
 }
 
-@media screen and (max-width: 1023px){
+@media screen and (min-width: 1670px){
 .main_content{
-  .main_info{
-    .info_block{
-      .info_content{
-        .info_img{
-          height: 30vw;
-          margin: 0 auto 1rem auto;
-        }
-        
-        .info_basic{
-          text-align: center;
+  .slider{
+    height: 242px;
+
+    .slick-list{
+      .slick-track{
+        .slick-slide{
+          img{height: 242px}
         }
       }
     }
   }
+
+  .main_info{
+    .info_block{
+      .info_content{
+        .info_img{height: 330px}
+      }
+    }
+  }
+
+  .r_menu{
+    .important .imp_block,
+    .last .last_block{
+      img{
+        height: 133px;
+        width: 133px;
+      }
+    }
+  }
+
+  .feedback{max-width: 51%}
 }
+}
+
+@media screen and (min-width: 1400px){
+  .header{
+    .header_top_menu{
+      .telephones{max-width: 35%}
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+  .header{
+    .header_top_menu{
+      .telephones{max-width: 42%}
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .main_content{
+    .main_info{
+      .info_block{
+        .info_content{
+         .info_img{
+           height: 30vw;
+           margin: 0 auto 1rem auto;
+          }
+        
+          .info_basic{text-align: center}
+
+          .info_text{
+            h5, p:first-of-type{
+              text-align: center
+            }
+          }
+       }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 940px){
@@ -572,9 +632,7 @@ body{
   .header{
     .header_top_menu{
       .telephones{
-        .tel{
-          font-size: 79%;
-        }
+        .tel{font-size: 79%}
       }
     }
   }
@@ -588,9 +646,7 @@ body{
 
         .slick-track{
           .slick-slide{
-            img{
-              height: 22.3vw;
-            }
+            img{height: 22.3vw}
           }
         }
       }
@@ -609,10 +665,8 @@ body{
       .important .imp_block,
       .last .last_block{
         padding: 0.4rem 0.4rem;
-        h6, span{
-          font-size: 0.9rem;
-        }
 
+        h6, span{font-size: 0.9rem}
       }
     }
   }
@@ -640,9 +694,7 @@ body{
   }
 
   .footer{
-    h5{
-      font-size: 1rem;
-    }
+    h5{font-size: 1rem}
   }
 }
 
@@ -670,18 +722,14 @@ body{
 
     .header_middle{
       .logo_block{
-        .logo{
-          margin: 0 auto;
-        }
+        .logo{margin: 0 auto}
       }
 
       .request{
         text-align: center;
         margin-top: 2rem;
 
-        button{
-          font-size: 100%;
-        }
+        button{font-size: 100%}
       }
     }
   }
@@ -709,7 +757,7 @@ body{
       .last .last_block{
         img{
           margin: 0 auto;
-          height: 50vw;
+          height: 60vw;
           padding-bottom: 2rem;
         }
 
@@ -758,9 +806,7 @@ body{
   .header{
     .header_menu{
       .search_form{
-        input{
-          padding: 0.2rem;
-        }
+        input{padding: 0.2rem}
 
         font-size: 80%;
       }
@@ -769,11 +815,8 @@ body{
 
   .main_content{
     .main_info{
-
       .info_block{
-        .info_footer{
-          font-size: 58%;
-        }
+        .info_footer{font-size: 58%}
       }
     }
   }
