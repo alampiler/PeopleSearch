@@ -14,14 +14,16 @@ body{
   a{
     transition: all 0.3s linear;
     
-    &:hover{
-      text-shadow: 0 0 10px $mainBlue;
-    }
+    &:hover{text-shadow: 0 0 10px $mainBlue}
   }
+
+  p{font-family: 'Sans Narrow', sans-serif !important}
 }
 
 .header {
   border-top: 4px solid $mainRed;
+  background: url("../img/header.jpg") 100% 20% no-repeat;
+
 
   .header_top_menu {
     background: $mainBlue;
@@ -91,6 +93,15 @@ body{
 
   .header_middle {
     padding: 2rem 0;
+    margin: 5rem 0;
+
+    .logo_block{
+      .logo{
+        img{
+          max-width: 280px;
+        }
+      }
+    }
 
     .request {
       .button{margin: 0}
@@ -266,12 +277,49 @@ body{
           img{
             height: 14.3vw;
             box-shadow: 0 1px 5px 1px rgba(0,0,0,1);
+            transition: all 0.3s linear;
+
+            &:hover{box-shadow: 0 1px 5px 1px $mainRed}
           }
         }
       }
     }
   }
-  
+
+  .faq_info{
+    .faq_title{
+      color: #fff;
+      background: $mainBlue;
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem;
+      box-shadow: 0 1px 5px 1px black;
+      border-bottom: 2px solid $mainRed;
+      margin-bottom: 4rem;
+    }
+
+    .accordion{
+      .accordion-item{
+        .accordion-title{
+          color: #fff;
+          background: $mainBlue;
+          box-shadow: 0 1px 5px 1px black;
+
+          &:hover{
+            background: $button-background-hover; 
+          }
+
+          &::before{
+            color: $mainRed;
+          }
+        }
+
+        .accordion-content{
+          box-shadow: 0 1px 5px 1px black;
+        }
+      }
+    }
+  }
+
   .main_info{
 
     a:hover{text-shadow: 0 0 10px #fff}
@@ -414,7 +462,7 @@ body{
     .feedback_form{
       padding: 1rem 2rem;
 
-      input{
+      input, textarea{
         border: 1px solid $mainBlue;
 
         &:focus{border: 1px solid $mainRed}
@@ -583,10 +631,27 @@ body{
   }
 }
 
+@media screen and (max-width: 1200px){
+  .main_content{
+    .main_info{
+      .info_block{
+        .info_footer{
+          font-size: 90%;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1023px){
   .main_content{
     .main_info{
       .info_block{
+
+        .info_footer{
+          font-size: 100%;
+        }
+
         .info_content{
          .info_img{
            height: 30vw;
@@ -596,9 +661,7 @@ body{
           .info_basic{text-align: center}
 
           .info_text{
-            h5, p:first-of-type{
-              text-align: center
-            }
+            h5, p:first-of-type{text-align: center}
           }
        }
       }
@@ -608,8 +671,6 @@ body{
 
 @media screen and (max-width: 940px){
   .header{
-    .button{font-size: 80%}
-
     .header_top_menu{
       .telephones{
         .tel{
@@ -672,9 +733,7 @@ body{
   }
 
   .footer{
-    h5{
-      font-size: 1.1rem;
-    }
+    h5{font-size: 1.1rem}
   }
 }
 
@@ -721,8 +780,14 @@ body{
     }
 
     .header_middle{
+      margin: 1rem 0;
+
       .logo_block{
-        .logo{margin: 0 auto}
+        .logo{
+          margin: 0 auto;
+
+          img{max-width: 100%}
+        }
       }
 
       .request{
@@ -743,7 +808,6 @@ body{
           .info_img{height: 50vw}
         }
 
-
         .info_footer{font-size: 100%}
       }
 
@@ -761,16 +825,12 @@ body{
           padding-bottom: 2rem;
         }
 
-        span, h6{
-          font-size: 1.2rem;
-        }
+        span, h6{font-size: 1.2rem}
 
         .r_menu_block_footer{
           text-align: center;
-          a{
-            font-size: 120%;
-          }
 
+          a{font-size: 120%}
         }
       }
     }
@@ -786,13 +846,12 @@ body{
       border-top: 1px solid $mainRed;
     }
 
-    .social_icons{
-      justify-content: center;
-    }
+    .social_icons{justify-content: center}
   }
 }
 
 @media screen and (max-width: 500px){
+
   .main_content{
     .main_info{
       .info_block{
